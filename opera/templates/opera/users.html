@@ -1,0 +1,79 @@
+{% extends 'opera/Base.html' %}
+{% load static %}
+{% block title_tab %}
+OperaFolio | Users
+{% endblock %}
+{% load humanize %}
+{% block content %}
+<div class="main-container">
+	<div class="pd-ltr-20 xs-pd-20-20">
+		<div class="min-height-200px">
+			<div class="page-header">
+				<div class="row">
+					<div class="col-md-6 col-sm-12">
+						<div class="title">
+							<h4>Demo Hotel</h4>
+						</div>
+						<nav aria-label="breadcrumb" role="navigation">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="{% url 'opera:opera' %}">Users</a></li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+				<!-- Striped table start -->
+				<div class="pd-20 card-box mb-30">
+					<div class="clearfix mb-20">
+						<div class="pull-left">
+							<h4 class="text-blue h4">User List</h4>
+						</div>
+					</div>
+					<div>
+						<form action="{% url 'user:register' %}">
+							<button style="border-radius: 4px; background-color: #4caf50; color: white; border: 2px solid #4CAF50">Register New User</button>
+						</form>
+					</div>
+					<br>
+					<table class="table table-hover" style="width: 100%;">
+						<thead>
+							<tr>
+								<th class="table-plus datatable-nosort" style="font-size: small;">ID</th>
+								<th style="font-size: small;">Username</th>
+								<th style="font-size: small;">Last Name</th>
+								<th style="font-size: small;">First Name</th>
+								<th style="font-size: small;">Activated</th>
+								<th style="font-size: small">Edit User</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for user in userlist %}
+							<tr>
+								<td class="table-plus" style="font-size: small;">{{ user.id }}</td>
+								<td style="font-size: small;">{{ user.username }}</td>
+								<td style="font-size: small;">{{ user.last_name }}</td>
+								<td style="font-size: small;">{{ user.first_name }}</td>
+								<td style="font-size: small;">{{ user.is_active }}</td>
+								<td><a class="fa fa-address-card-o" href="{% url 'user:edituser' user.pk %}"></a></td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					
+					<div class="collapse collapse-box" id="striped-table">
+						<div class="code-box">
+							<div class="clearfix">
+								<a href="javascript:;" class="btn btn-primary btn-sm code-copy pull-left"  data-clipboard-target="#striped-table-code"><i class="fa fa-clipboard"></i> Copy Code</a>
+								<a href="#striped-table" class="btn btn-primary btn-sm pull-right" rel="content-y"  data-toggle="collapse" role="button"><i class="fa fa-eye-slash"></i> Hide Code</a>
+							</div>
+							<pre><code class="xml copy-pre" id="striped-table-code">
+<table class="table table-striped">
+</table>
+							</code></pre>
+						</div>
+					</div>
+				</div>
+				<!-- Striped table End -->
+		</div>
+	</div>
+</div>
+{% endblock %}

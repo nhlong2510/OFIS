@@ -1,0 +1,92 @@
+{% extends 'opera/Base.html' %}
+{% load static %}
+{% block title_tab %}
+OperaFolio | Register
+{% endblock %}
+{% block content %}
+
+<body class="login-page">
+	<div class="login-header box-shadow">
+		<div class="container-fluid d-flex justify-content-between align-items-center">
+			<div class="brand-logo">
+				<a href="{% url 'opera:opera' %}">
+					<img src="{% static 'opera/vendors/images/deskapp-logo.svg' %}" alt="">
+				</a>
+			</div>
+			<div class="login-menu">
+				<ul>
+					<li><a href="{% url 'user:login' %}">Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="register-page-wrap d-flex align-items-center flex-wrap justify-content-center">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-6 col-lg-7">
+					<img src="{% static 'opera/vendors/images/register-page-img.png' %}" alt="">
+				</div>
+				<div class="col-md-6 col-lg-5">
+					<div class="register-box bg-white box-shadow border-radius-10">
+						<div>
+							<form class="wizard-circle wizard" method="post">
+								{% csrf_token %}
+								<h6 style="text-align: center; padding-top: 15px;">Account Registration</h6>
+									<div class="form-wrap max-width-600 mx-auto">
+										<div class="form-group row">
+											{{ reg_result|safe }}
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label" style="margin-left: 15px;">{{ frm_reg.first_name.label }}</label>
+											<div class="col-sm-7">
+												{{ frm_reg.first_name }}
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label" style="margin-left: 15px;">{{ frm_reg.last_name.label }}</label>
+											<div class="col-sm-7">
+												{{ frm_reg.last_name }}
+											</div>
+										</div>										
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label" style="margin-left: 15px;">{{ frm_reg.username.label }}*</label>
+											<div class="col-sm-7">
+												{{ frm_reg.username }}
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label" style="margin-left: 15px;">{{ frm_reg.email.label }}*</label>
+											<div class="col-sm-7">
+												{{ frm_reg.email }}
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label" style="margin-left: 15px;">{{ frm_reg.password.label }}*</label>
+											<div class="col-sm-7">
+												{{ frm_reg.password }}
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label" style="margin-left: 15px;">{{ frm_reg.confirm_password.label }}*</label>
+											<div class="col-sm-7">
+												{{ frm_reg.confirm_password }}
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label" style="margin-left: 15px;">{{ frm_reg.is_active.label }}*</label>
+											<div class="col-sm-7">
+												{{ frm_reg.is_active }}
+											</div>
+										</div>
+									</div>
+								<td>
+									<button class="btn contact_btn" name="btnSubmit" value="Submit" type="submit" style="background-color: #009efb; color: #fff; display: block; padding: 7px 12px; border-radius: 4px;border: 1px solid transparent; min-width: 100px; text-align: center; position: relative; left: 165px;">Submit</button>
+								</td>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

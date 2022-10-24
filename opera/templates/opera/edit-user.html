@@ -1,0 +1,92 @@
+{% extends 'opera/Base.html' %}
+{% load static %}
+{% block title_tab %}
+OperaFolio | User Edit
+{% endblock %}
+{% block content %}
+
+<body class="login-page">
+	<div class="login-header box-shadow">
+		<div class="container-fluid d-flex justify-content-between align-items-center">
+			<div class="brand-logo">
+				<a href="{% url 'opera:opera' %}">
+					<img src="{% static 'opera/vendors/images/deskapp-logo.svg' %}" alt="">
+				</a>
+			</div>
+			<div class="login-menu">
+				<ul>
+					<li><a href="{% url 'user:login' %}">Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="register-page-wrap d-flex align-items-center flex-wrap justify-content-center">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-6 col-lg-7">
+					<img src="{% static 'opera/vendors/images/register-page-img.png' %}" alt="">
+				</div>
+				<div class="col-md-6 col-lg-5">
+					<div class="register-box bg-white box-shadow border-radius-10">
+						<div>
+							<form class="wizard-circle wizard" method="post">
+								{% csrf_token %}
+								<h6 style="text-align: center; padding-top: 15px;">Account Editing</h6>
+									<div class="form-wrap max-width-600 mx-auto">
+										<div class="form-group row">
+											{{ result|safe }}
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label" style="margin-left: 15px;">First Name</label>
+											<div class="col-sm-7">
+												<input type="text" class="form-control" value="{{ user.first_name }}" name="first_name" required>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label" style="margin-left: 15px;">Last Name</label>
+											<div class="col-sm-7">
+												<input type="text" name="last_name" class="form-control" value="{{ user.last_name }}" required>
+											</div>
+										</div>										
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label" style="margin-left: 15px;">Username*</label>
+											<div class="col-sm-7">
+												<input type="text" name="username" class="form-control" value="{{ user.username }}" required>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label" style="margin-left: 15px;">Email*</label>
+											<div class="col-sm-7">
+												<input type="email" name="email" class="form-control" value="{{ user.email }}" required>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label" style="margin-left: 15px;">Password*</label>
+											<div class="col-sm-7">
+												<input type="password" name="password" class="form-control" placeholder="Password" required>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label" style="margin-left: 15px;">Confirm Password*</label>
+											<div class="col-sm-7">
+												<input type="password" name="confirm_pass" class="form-control" placeholder="Confirm Password" required>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label class="col-sm-4 col-form-label" style="margin-left: 15px;">Active/Inactive*</label>
+											<div class="col-sm-7">
+												<input type="text" name="active" value="{{ user.is_active }}" class="form-control" required>
+											</div>
+										</div>
+									</div>
+								<td>
+									<button class="btn contact_btn" name="btnUpdate" value="Update" type="submit" style="background-color: #009efb; color: #fff; display: block; padding: 7px 12px; border-radius: 4px;border: 1px solid transparent; min-width: 100px; text-align: center; position: relative; left: 165px;">Update</button>
+								</td>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

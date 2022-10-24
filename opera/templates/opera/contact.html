@@ -1,0 +1,87 @@
+{% extends 'opera/Base.html' %}
+{%load static %}
+{% block title_tab %}
+OperaFolio | Contact
+{% endblock %}
+{% block content %}
+	<div class="main-container">
+		<div class="pd-ltr-20 xs-pd-20-10">
+			<div class="min-height-200px">
+				<div class="pd-20 card-box mb-30">
+					<div class="clearfix">
+						<h4 class="text-blue h4">Contact Inquiries</h4>
+					</div>
+					<div class="wizard-content">
+						<form class="wizard-circle wizard" method="post">
+							{% csrf_token %}
+							{{ result|safe }}
+							<section>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label >{{ form.firstname.label }}</label>
+											{{ form.firstname }}
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label >{{ form.lastname.label }}</label>
+											{{ form.lastname }}
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>{{ form.email.label }}</label>
+											{{ form.email }}
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>{{ form.telephone.label }}</label>
+											{{ form.telephone }}
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>{{ form.title.label }}</label>
+											{{ form.title }}
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>{{ form.property_name.label }}</label>
+											{{ form.property_name }}
+										</div>
+									</div>
+								</div>
+							</section>
+							<!-- Step 2 -->
+							<section>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>{{ form.subject.label }}</label>
+											{{ form.subject }}
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>{{ form.description.label }}</label>
+											{{ form.description }}
+										</div>
+									</div>
+								</div>
+							</section>
+								<td>
+									<button class="btn contact_btn" name="btnSendMessage" value="Submit" type="submit" style="background-color: #009efb; color: #fff; display: block; padding: 7px 12px; border-radius: 4px;border: 1px solid transparent; min-width: 100px; text-align: center;">Submit</button>
+								</td>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+{% endblock %}
