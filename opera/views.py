@@ -80,11 +80,11 @@ def foliocreate(request):
 
 @login_required(login_url='user:login')
 def opera(request):
-    documentinfo = list(FlipInfo.objects.all().values())
-    documentadjust = list(FlipInfo.objects.filter(Q(EinvoiceStatus__icontains=9)&Q(NetAmount__lte=0)).values())
-    documentupload = list(FlipInfo.objects.filter(Q(EinvoiceStatus__icontains=9)).values())
-    documentdraft = list(FlipInfo.objects.filter(Q(EinvoiceStatus__icontains=0)).values())
-    documentissued = list(FlipInfo.objects.filter(Q(EinvoiceStatus__icontains=1)).values())
+    documentinfo = FlipInfo.objects.all()
+    documentadjust = FlipInfo.objects.filter(Q(EinvoiceStatus__icontains=9)&Q(NetAmount__lte=0))
+    documentupload = FlipInfo.objects.filter(Q(EinvoiceStatus__icontains=9))
+    documentdraft = FlipInfo.objects.filter(Q(EinvoiceStatus__icontains=0))
+    documentissued = FlipInfo.objects.filter(Q(EinvoiceStatus__icontains=1))
      
     return render(request, 'opera/opera.html', {
         'documentinfo': documentinfo,
@@ -153,9 +153,9 @@ def folioinfo(request):
             "Arrival": flip["ReservationInfo"]["ArrivalDate"],
             "Departure": flip["ReservationInfo"]["DepartureDate"],
             "GuestInfo": {
-                "Email": flip["ReservationInfo"]["GuestInfo"]["Email"],
-                "Phone": flip["ReservationInfo"]["GuestInfo"]["Phone"],
-                "Name": flip["ReservationInfo"]["GuestInfo"]["LastName"] + ' ' + flip["ReservationInfo"]["GuestInfo"]["FirstName"],
+                "Email": flip["ReservationInfo"]["GuestInfo"].get("Email", ' '),
+                "Phone": flip["ReservationInfo"]["GuestInfo"].get("Phone", ' '),
+                "Name": flip["ReservationInfo"]["GuestInfo"].get("LastName",' ') + ' ' + flip["ReservationInfo"]["GuestInfo"].get("FirstName",' '),
                 "Address": flip["ReservationInfo"]["GuestInfo"]["Address"]
                 },
             "HotelCode": flip["HotelInfo"]["HotelCode"],
@@ -199,7 +199,7 @@ def folioinfo(request):
             "Arrival": flip["ReservationInfo"]["ArrivalDate"],
             "Departure": flip["ReservationInfo"]["DepartureDate"],
             "GuestInfo": {
-                "Email": {},
+                "Email": " ",
                 "Phone": flip["ReservationInfo"]["GuestInfo"]["Phone"],
                 "Name": flip["ReservationInfo"]["GuestInfo"]["LastName"]+' '+flip["ReservationInfo"]["GuestInfo"]["FirstName"],
                 "Address": flip["ReservationInfo"]["GuestInfo"]["Address"]
@@ -331,7 +331,7 @@ def folioinfo(request):
                 "Arrival": flip["ReservationInfo"]["ArrivalDate"],
                 "Departure": flip["ReservationInfo"]["DepartureDate"],
                 "GuestInfo": {
-                    "Email": {},
+                    "Email": " ",
                     "Phone": flip["ReservationInfo"]["GuestInfo"]["Phone"],
                     "Name": flip["ReservationInfo"]["GuestInfo"]["LastName"]+' '+flip["ReservationInfo"]["GuestInfo"]["FirstName"],
                     "Address": flip["ReservationInfo"]["GuestInfo"]["Address"]
@@ -460,7 +460,7 @@ def folioinfo(request):
                 "Arrival": flip["ReservationInfo"]["ArrivalDate"],
                 "Departure": flip["ReservationInfo"]["DepartureDate"],
                 "GuestInfo": {
-                    "Email": {},
+                    "Email": " ",
                     "Phone": flip["ReservationInfo"]["GuestInfo"]["Phone"],
                     "Name": flip["ReservationInfo"]["GuestInfo"]["LastName"]+' '+flip["ReservationInfo"]["GuestInfo"]["FirstName"],
                     "Address": flip["ReservationInfo"]["GuestInfo"]["Address"]
