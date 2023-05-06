@@ -578,6 +578,8 @@ def details(request, pk):
         "ConfirmationNo": flip["ReservationInfo"]["ConfirmationNo"],
         "Arrival": flip["ReservationInfo"]["ArrivalDate"],
         "Departure": flip["ReservationInfo"]["DepartureDate"],
+        "GuestNo": flip["ReservationInfo"]["NumAdults"] + flip["ReservationInfo"]["NumChilds"],
+        "RoomNo": flip["ReservationInfo"].get("RoomNumber"," "),
         "GuestInfo": {
             "Email": flip["ReservationInfo"]["GuestInfo"]["Email"],
             "Phone": flip["ReservationInfo"]["GuestInfo"]["Phone"],
@@ -623,6 +625,8 @@ def details(request, pk):
         "ConfirmationNo": flip["ReservationInfo"]["ConfirmationNo"],
         "Arrival": flip["ReservationInfo"]["ArrivalDate"],
         "Departure": flip["ReservationInfo"]["DepartureDate"],
+        "GuestNo": flip["ReservationInfo"]["NumAdults"] + flip["ReservationInfo"]["NumChilds"],
+        "RoomNo": flip["ReservationInfo"].get("RoomNumber"," "),
         "GuestInfo": {
             "Email": {},
             "Phone": flip["ReservationInfo"]["GuestInfo"]["Phone"],
@@ -668,6 +672,8 @@ def details(request, pk):
         "ConfirmationNo": flip["ReservationInfo"]["ConfirmationNo"],
         "Arrival": flip["ReservationInfo"]["ArrivalDate"],
         "Departure": flip["ReservationInfo"]["DepartureDate"],
+        "GuestNo": flip["ReservationInfo"]["NumAdults"] + flip["ReservationInfo"]["NumChilds"],
+        "RoomNo": flip["ReservationInfo"].get("RoomNumber"," "),
         "GuestInfo": {
             "Email": {},
             "Phone": flip["ReservationInfo"]["GuestInfo"]["Phone"],
@@ -710,6 +716,8 @@ def details(request, pk):
         "ConfirmationNo": flip["ReservationInfo"]["ConfirmationNo"],
         "Arrival": flip["ReservationInfo"]["ArrivalDate"],
         "Departure": flip["ReservationInfo"]["DepartureDate"],
+        "GuestNo": flip["ReservationInfo"]["NumAdults"] + flip["ReservationInfo"]["NumChilds"],
+        "RoomNo": flip["ReservationInfo"].get("RoomNumber"," "),
         "GuestInfo": {
             "Email": flip["ReservationInfo"]["GuestInfo"]["Email"],
             "Phone": flip["ReservationInfo"]["GuestInfo"]["Phone"],
@@ -752,6 +760,8 @@ def details(request, pk):
             "ConfirmationNo": flip["ReservationInfo"]["ConfirmationNo"],
             "Arrival": flip["ReservationInfo"]["ArrivalDate"],
             "Departure": flip["ReservationInfo"]["DepartureDate"],
+            "GuestNo": flip["ReservationInfo"]["NumAdults"] + flip["ReservationInfo"]["NumChilds"],
+            "RoomNo": flip["ReservationInfo"].get("RoomNumber"," "),
             "GuestInfo": {
                 "Email": flip["ReservationInfo"]["GuestInfo"]["Email"],
                 "Phone": flip["ReservationInfo"]["GuestInfo"]["Phone"],
@@ -794,6 +804,8 @@ def details(request, pk):
             "ConfirmationNo": flip["ReservationInfo"]["ConfirmationNo"],
             "Arrival": flip["ReservationInfo"]["ArrivalDate"],
             "Departure": flip["ReservationInfo"]["DepartureDate"],
+            "GuestNo": flip["ReservationInfo"]["NumAdults"] + flip["ReservationInfo"]["NumChilds"],
+            "RoomNo": flip["ReservationInfo"].get("RoomNumber"," "),
             "GuestInfo": {
                 "Email": {},
                 "Phone": flip["ReservationInfo"]["GuestInfo"]["Phone"],
@@ -836,6 +848,8 @@ def details(request, pk):
             "ConfirmationNo": flip["ReservationInfo"]["ConfirmationNo"],
             "Arrival": flip["ReservationInfo"]["ArrivalDate"],
             "Departure": flip["ReservationInfo"]["DepartureDate"],
+            "GuestNo": flip["ReservationInfo"]["NumAdults"] + flip["ReservationInfo"]["NumChilds"],
+            "RoomNo": flip["ReservationInfo"].get("RoomNumber"," "),
             "GuestInfo": {
                 "Email": {},
                 "Phone": flip["ReservationInfo"]["GuestInfo"]["Phone"],
@@ -878,6 +892,8 @@ def details(request, pk):
             "ConfirmationNo": flip["ReservationInfo"]["ConfirmationNo"],
             "Arrival": flip["ReservationInfo"]["ArrivalDate"],
             "Departure": flip["ReservationInfo"]["DepartureDate"],
+            "GuestNo": flip["ReservationInfo"]["NumAdults"] + flip["ReservationInfo"]["NumChilds"],
+            "RoomNo": flip["ReservationInfo"].get("RoomNumber"," "),
             "GuestInfo": {
                 "Email": flip["ReservationInfo"]["GuestInfo"]["Email"],
                 "Phone": flip["ReservationInfo"]["GuestInfo"]["Phone"],
@@ -920,6 +936,8 @@ def details(request, pk):
             "ConfirmationNo": flip["ReservationInfo"]["ConfirmationNo"],
             "Arrival": flip["ReservationInfo"]["ArrivalDate"],
             "Departure": flip["ReservationInfo"]["DepartureDate"],
+            "GuestNo": flip["ReservationInfo"]["NumAdults"] + flip["ReservationInfo"]["NumChilds"],
+            "RoomNo": flip["ReservationInfo"].get("RoomNumber"," "),
             "GuestInfo": {
                 "Email": flip["ReservationInfo"]["GuestInfo"]["Email"],
                 "Phone": flip["ReservationInfo"]["GuestInfo"]["Phone"],
@@ -962,6 +980,8 @@ def details(request, pk):
             "ConfirmationNo": flip["ReservationInfo"]["ConfirmationNo"],
             "Arrival": flip["ReservationInfo"]["ArrivalDate"],
             "Departure": flip["ReservationInfo"]["DepartureDate"],
+            "GuestNo": flip["ReservationInfo"]["NumAdults"] + flip["ReservationInfo"]["NumChilds"],
+            "RoomNo": flip["ReservationInfo"].get("RoomNumber"," "),
             "GuestInfo": {
                 "Email": {},
                 "Phone": flip["ReservationInfo"]["GuestInfo"]["Phone"],
@@ -1004,6 +1024,8 @@ def details(request, pk):
             "ConfirmationNo": flip["ReservationInfo"]["ConfirmationNo"],
             "Arrival": flip["ReservationInfo"]["ArrivalDate"],
             "Departure": flip["ReservationInfo"]["DepartureDate"],
+            "GuestNo": flip["ReservationInfo"]["NumAdults"] + flip["ReservationInfo"]["NumChilds"],
+            "RoomNo": flip["ReservationInfo"].get("RoomNumber"," "),
             "GuestInfo": flip["ReservationInfo"]["GuestInfo"],
             "HotelCode": flip["HotelInfo"]["HotelCode"],
             "HotelName": flip["HotelInfo"]["HotelName"],
