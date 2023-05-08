@@ -145,7 +145,7 @@ def folioinfo(request):
                 "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
                 "EinvoiceFKey": flip["EinvoiceFKey"],
                 "EinvoicePattern": flip["EinvoicePattern"],
-                "EinvoiceSerial": flip["EinvoiceSerial"],
+                "EinvoiceSerial": "C23MAB",
                 "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
                 "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"],
             },
@@ -191,7 +191,7 @@ def folioinfo(request):
                 "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
                 "EinvoiceFKey": flip["EinvoiceFKey"],
                 "EinvoicePattern": flip["EinvoicePattern"],
-                "EinvoiceSerial": flip["EinvoiceSerial"],
+                "EinvoiceSerial": "C23MAB",
                 "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
                 "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"]
             },
@@ -237,7 +237,7 @@ def folioinfo(request):
                     "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
                     "EinvoiceFKey": flip["EinvoiceFKey"],
                     "EinvoicePattern": flip["EinvoicePattern"],
-                    "EinvoiceSerial": flip["EinvoiceSerial"],
+                    "EinvoiceSerial": "C23MAB",
                     "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
                     "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"]
                 },
@@ -280,7 +280,7 @@ def folioinfo(request):
                     "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
                     "EinvoiceFKey": flip["EinvoiceFKey"],
                     "EinvoicePattern": flip["EinvoicePattern"],
-                    "EinvoiceSerial": flip["EinvoiceSerial"],
+                    "EinvoiceSerial": "C23MAB",
                     "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
                     "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"]
                 },
@@ -323,7 +323,7 @@ def folioinfo(request):
                     "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
                     "EinvoiceFKey": flip["EinvoiceFKey"],
                     "EinvoicePattern": flip["EinvoicePattern"],
-                    "EinvoiceSerial": flip["EinvoiceSerial"],
+                    "EinvoiceSerial": "C23MAB",
                     "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
                     "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"]
                 },
@@ -366,7 +366,7 @@ def folioinfo(request):
                     "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
                     "EinvoiceFKey": flip["EinvoiceFKey"],
                     "EinvoicePattern": flip["EinvoicePattern"],
-                    "EinvoiceSerial": flip["EinvoiceSerial"],
+                    "EinvoiceSerial": "C23MAB",
                     "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
                     "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"]
                 },
@@ -409,7 +409,7 @@ def folioinfo(request):
                     "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
                     "EinvoiceFKey": flip["EinvoiceFKey"],
                     "EinvoicePattern": flip["EinvoicePattern"],
-                    "EinvoiceSerial": flip["EinvoiceSerial"],
+                    "EinvoiceSerial": "C23MAB",
                     "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
                     "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"]
                 },
@@ -452,7 +452,7 @@ def folioinfo(request):
                     "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
                     "EinvoiceFKey": flip["EinvoiceFKey"],
                     "EinvoicePattern": flip["EinvoicePattern"],
-                    "EinvoiceSerial": flip["EinvoiceSerial"],
+                    "EinvoiceSerial": "C23MAB",
                     "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
                     "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"]
                 },
@@ -495,7 +495,7 @@ def folioinfo(request):
                     "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
                     "EinvoiceFKey": flip["EinvoiceFKey"],
                     "EinvoicePattern": flip["EinvoicePattern"],
-                    "EinvoiceSerial": flip["EinvoiceSerial"],
+                    "EinvoiceSerial": "C23MAB",
                     "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
                     "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"]
                 },
@@ -571,7 +571,7 @@ def details(request, pk):
             "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
             "EinvoiceFKey": flip["EinvoiceFKey"],
             "EinvoicePattern": flip["EinvoicePattern"],
-            "EinvoiceSerial": flip["EinvoiceSerial"],
+            "EinvoiceSerial": "C23MAB",
             "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
             "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"],
         },
@@ -618,7 +618,7 @@ def details(request, pk):
             "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
             "EinvoiceFKey": flip["EinvoiceFKey"],
             "EinvoicePattern": flip["EinvoicePattern"],
-            "EinvoiceSerial": flip["EinvoiceSerial"],
+            "EinvoiceSerial": "C23MAB",
             "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
             "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"]
         },
@@ -665,7 +665,7 @@ def details(request, pk):
             "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
             "EinvoiceFKey": flip["EinvoiceFKey"],
             "EinvoicePattern": flip["EinvoicePattern"],
-            "EinvoiceSerial": flip["EinvoiceSerial"],
+            "EinvoiceSerial": "C23MAB",
             "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
             "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"]
         },
@@ -709,7 +709,7 @@ def details(request, pk):
             "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
             "EinvoiceFKey": flip["EinvoiceFKey"],
             "EinvoicePattern": flip["EinvoicePattern"],
-            "EinvoiceSerial": flip["EinvoiceSerial"],
+            "EinvoiceSerial": "C23MAB",
             "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
             "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"]
         },
@@ -753,7 +753,7 @@ def details(request, pk):
                 "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
                 "EinvoiceFKey": flip["EinvoiceFKey"],
                 "EinvoicePattern": flip["EinvoicePattern"],
-                "EinvoiceSerial": flip["EinvoiceSerial"],
+                "EinvoiceSerial": "C23MAB",
                 "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
                 "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"]
             },
@@ -797,7 +797,7 @@ def details(request, pk):
                 "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
                 "EinvoiceFKey": flip["EinvoiceFKey"],
                 "EinvoicePattern": flip["EinvoicePattern"],
-                "EinvoiceSerial": flip["EinvoiceSerial"],
+                "EinvoiceSerial": "C23MAB",
                 "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
                 "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"]
             },
@@ -841,7 +841,7 @@ def details(request, pk):
                 "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
                 "EinvoiceFKey": flip["EinvoiceFKey"],
                 "EinvoicePattern": flip["EinvoicePattern"],
-                "EinvoiceSerial": flip["EinvoiceSerial"],
+                "EinvoiceSerial": "C23MAB",
                 "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
                 "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"]
             },
@@ -885,7 +885,7 @@ def details(request, pk):
                 "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
                 "EinvoiceFKey": flip["EinvoiceFKey"],
                 "EinvoicePattern": flip["EinvoicePattern"],
-                "EinvoiceSerial": flip["EinvoiceSerial"],
+                "EinvoiceSerial": "C23MAB",
                 "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
                 "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"]
             },
@@ -929,7 +929,7 @@ def details(request, pk):
                 "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
                 "EinvoiceFKey": flip["EinvoiceFKey"],
                 "EinvoicePattern": flip["EinvoicePattern"],
-                "EinvoiceSerial": flip["EinvoiceSerial"],
+                "EinvoiceSerial": "C23MAB",
                 "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
                 "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"]
             },
@@ -973,7 +973,7 @@ def details(request, pk):
                 "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
                 "EinvoiceFKey": flip["EinvoiceFKey"],
                 "EinvoicePattern": flip["EinvoicePattern"],
-                "EinvoiceSerial": flip["EinvoiceSerial"],
+                "EinvoiceSerial": "C23MAB",
                 "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
                 "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"]
             },
@@ -1017,7 +1017,7 @@ def details(request, pk):
                 "AuthorizedTaxCode": flip["AuthorizedTaxCode"],
                 "EinvoiceFKey": flip["EinvoiceFKey"],
                 "EinvoicePattern": flip["EinvoicePattern"],
-                "EinvoiceSerial": flip["EinvoiceSerial"],
+                "EinvoiceSerial": "C23MAB",
                 "EinvoiceAdjustDateTime": flip["EinvoiceAdjustDateTime"],
                 "EinvoiceIssueDateTime": flip["EinvoiceIssueDateTime"]
             },
