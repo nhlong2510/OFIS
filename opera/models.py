@@ -17,7 +17,7 @@ class FlipInfo(models.Model):
     EinvoiceStatus = models.CharField(max_length=200, null=True, blank=True, default="9: Not Upload")
     EinvoiceFKey = models.CharField(max_length=200, default=" ")
     EinvoicePattern = models.CharField(max_length=200, default=" ")
-    EinvoiceSerial = models.CharField(max_length=200, default=" ")
+    EinvoiceSerial = models.CharField(max_length=200, default="C23MAB")
     AuthorizedTaxCode = models.CharField(max_length=500, null=True, blank=True, default=" ")
     EinvoiceAdjustDateTime = models.DateTimeField(blank=True, null=True)
     EinvoiceIssueDateTime = models.DateTimeField(blank=True, null=True)
