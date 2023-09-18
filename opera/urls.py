@@ -1,15 +1,15 @@
 from django.urls import path
-from . import views
+from . import api, views
 
 
-app_name='opera'
+app_name = 'opera'
+
 urlpatterns = [
-    path('folio_create/', views.foliocreate, name="create"),
     path('', views.opera, name="opera"),
-    path('api/folio_details/<int:pk>', views.details, name="detail"),
-    path('folio_update/<int:pk>', views.folioupdate, name="update"),
-    path('folio_adjust/<int:pk>', views.folioadjust, name="adjust"),
-    path('api/folio_infos/', views.folioinfo, name="info"),
-    path('folio/new/', views.folio_new, name="folio_new"), 
     path('folio/not_upload/', views.folio_upload, name="folio_upload"), 
+    path('folio/issued/', views.folio_issue, name="folio_issued"), 
+    path('api/folio_create/', api.foliocreate, name="folio_create"),
+    path('api/folio_infos/', api.folioinfo, name='folio_infos'),
+    path('api/folio_detail/<int:pk>/', api.foliodetail, name='folio_detail'),
+    path('api/folio_update/<int:pk>/', api.folioupdate, name='folio_update'),
 ]
