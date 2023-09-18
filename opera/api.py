@@ -7,13 +7,15 @@ from rest_framework.permissions import IsAuthenticated
 from . models import OfisInfo, Einvoice
 from . filters import OfisFilter
 from . pagination import MyPagination
-from . serializers import OfisInfoSerializer
+from . serialize import OfisInfoSerializer
 
 
 @api_view(['POST'])
 @authentication_classes([BasicAuthentication])
 @permission_classes([IsAuthenticated])
 def foliocreate(request):
+    current_date = date.today().strftime("%Y-%m-%d")
+    current_datetime = datetime.today().strftime("&Y-%m-%dT%H:%M:%S")
     new_einvoice = Einvoice.objects.create(
         EinvoiceType = "9: Not Upload",
         EinvoiceStatus = "9: Not Upload",
