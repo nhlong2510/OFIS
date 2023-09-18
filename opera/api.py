@@ -1,3 +1,4 @@
+from datetime import date, datetime
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
@@ -94,8 +95,8 @@ def foliocreate(request):
             FolioNo = post_data["DocumentInfo"]["BillNo"],
             Window = post_data["FolioInfo"]["FolioHeaderInfo"]["Window"] if post_data["FolioInfo"].get("FolioHeaderInfo") is not None else "",
             FolioType = post_data["DocumentInfo"]["FolioType"],
-            FolioCreatedDate = post_data["DocumentInfo"]["BusinessDate"],
-            FolioCreatedDateTime = post_data["FolioInfo"]["FolioHeaderInfo"]["BillGenerationDate"] if post_data["FolioInfo"].get("FolioHeaderInfo") is not None else post_data["DocumentInfo"]["BusinessDateTime"],
+            FolioCreatedDate = date.today().strftime("%Y-%m-%d'),
+            FolioCreatedDateTime = datetime.today().strftime("&Y-%m-%dT%H:%M:%S"),
             TerminalId = post_data.get("FiscalTerminalInfo", {}).get("TerminalId", ""),
             Command = post_data["DocumentInfo"]["Command"],
             RoomNumber = post_data["ReservationInfo"]["RoomNumber"],
