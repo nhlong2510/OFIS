@@ -1,35 +1,58 @@
 from rest_framework import serializers
-from . models import FlipInfo
+from . models import Einvoice, OfisInfo
 
 
-class FlipSerialize(serializers.ModelSerializer):
+class EinvoiceSerializer(serializers.ModelSerializer):
     class Meta:
-        model = FlipInfo
-        fields = [
-            "id",
-            "EinvoiceNumber",
-            "EinvoiceType",
-            "EinvoiceStatus",
-            "AuthorizedTaxCode",
-            "EinvoiceFKey",
-            "EinvoicePattern",
-            "EinvoiceSerial",
-            "EinvoiceIssueDateTime",
-            "EinvoiceAdjustDateTime",
-            "BusinessDate",
-            "BusinessDateTime",
-            "FolioNo",
-            "NetAmount",
-            "DocumentInfo",
-            "FolioInfo",
-            "HotelInfo",
-            "ReservationInfo",
-            "FiscalTerminalInfo",
-            "FiscalFolioUserInfo",
-        ]
-    
+        model = Einvoice
+        fields = (
+            'EinvoiceNumber', 
+            'EinvoiceType', 
+            'EinvoiceStatus', 
+            'EinvoiceFKey', 
+            'EinvoicePattern', 
+            'EinvoiceSerial', 
+            'AuthorizedTaxCode', 
+            'EinvoiceAdjustDateTime', 
+            'EinvoiceIssueDateTime',
+            )
+        
 
-class OFISSerialize(serializers.ModelSerializer):
+class OfisInfoSerializer(serializers.ModelSerializer):
+    EinvoiceInfo = EinvoiceSerializer(read_only=True)
     class Meta:
-        model = FlipInfo
-        fields = '__all__'
+        model = OfisInfo
+        fields = (
+            'id',
+            'EinvoiceInfo',
+            'HotelCode',
+            'HotelName',
+            'AppUser',
+            'ConfirmationNo',
+            'Arrival',
+            'Departure',
+            'GuestNo',
+            'GuestInfo',
+            'FolioNo',
+            'Window',
+            'FolioType',
+            'FolioCreatedDate',
+            'FolioCreatedDateTime',
+            'TerminalId',
+            'Command',
+            'RoomNumber',
+            'PayeeInfo',
+            'PayeeAddress',
+            'VATNo',
+            'PaymentMethod',
+            'NetAmount',
+            'GrossAmount',
+            'Taxes',
+            'Postings',
+            'TrxInfo',
+        )
+
+
+
+
+
