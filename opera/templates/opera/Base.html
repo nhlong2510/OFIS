@@ -24,6 +24,9 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'opera/src/plugins/datatables/css/responsive.bootstrap4.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'opera/vendors/styles/style.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'opera/src/plugins/jquery-steps/jquery.steps.css' %}">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/1.0.0/chartjs-plugin-datalabels.min.js" integrity="sha512-XulchVN83YTvsOaBGjLeApZuasKd8F4ZZ28/aMHevKjzrrjG0lor+T4VU248fWYMNki3Eimk+uwdlQS+uZmu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
@@ -93,7 +96,7 @@
 				<ul id="accordion-menu">
 					<li class="dropdown">
 						<a href="{% url 'opera:opera' %}" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-edit2"></span><span class="mtext">Home</span>
+							<span class="micon dw dw-edit2"></span><span class="mtext">Dashboard</span>
 						</a>
 					</li>
 					<li>
@@ -102,8 +105,8 @@
 						</a>
 					</li>
 					<li>
-						<a href="{% url 'opera:folio_new' %}" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-library"></span><span class="mtext">New Folio</span>
+						<a href="{% url 'opera:folio_issued' %}" class="dropdown-toggle no-arrow">
+							<span class="micon dw dw-library"></span><span class="mtext">Issued Folio</span>
 						</a>
 					</li>
 					<li>
@@ -141,5 +144,8 @@
 
 	<script src="{% static 'opera/src/plugins/jquery-steps/jquery.steps.js' %}"></script>
 	<script src="{% static 'opera/vendors/scripts/steps-setting.js' %}"></script>
+	{% block scripts %}
+
+	{% endblock %}
 </body>
 </html>
