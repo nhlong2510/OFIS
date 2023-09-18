@@ -1,5 +1,5 @@
 from django.urls import path
-from . import api, views
+from opera import api, views
 
 
 app_name = 'opera'
