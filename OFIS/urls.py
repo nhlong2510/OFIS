@@ -1,7 +1,7 @@
-"""OFIS URL Configuration
+"""ofis URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.0/topics/http/urls/
+    https://docs.djangoproject.com/en/4.1/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -17,18 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-from rest_framework import routers
-from opera import views
-
-router = routers.DefaultRouter()
-router.register(r'folios', views.FlipViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('opera.urls')),
-    path('account/', include('useraccount.urls')),
-    path('flip/', include(router.urls)),
-    path('flip-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('account/', include('user.urls'))
 ]
-urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
-urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
