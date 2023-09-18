@@ -23,90 +23,70 @@ OperaFolio | Not Upload Folio
 				</div>
 			</div>
 				<!-- Striped table start -->
-				<div class="pd-20 card-box mb-30">
-					<div class="clearfix mb-20">
-						<div class="pull-left">
-							<h4 class="text-blue h4">Folio Info</h4>
-						</div>
-					</div>
-					<table class="table table-hover data-table-export" style="width: 100%;">
-						<thead>
-							<tr>
-								<th class="table-plus datatable-nosort" style="font-size: small;">ID</th>
-								<th style="font-size: small;">Folio No.</th>
-								<th style="font-size: small;">Conf. No.</th>
-								<th style="font-size: small;">Room No.</th>
-								<th style="font-size: small;">Issuer</th>
-								<th style="word-wrap: break-word; font-size: small;">Net Amount</th>
-								<th style="word-wrap: break-word; font-size: small;">Gross Amount</th>
-								<th style="word-wrap: break-word; font-size: small;">VAT</th>
-								<th style="word-wrap: break-word; font-size: small;">SVC</th>
-								<th style="word-wrap: break-word; font-size: small;">SCT</th>
-								<th style="word-wrap: break-word; font-size: small;">Payment Method</th>
-								<th style="word-wrap: break-word; font-size: small;">Folio Generate Date</th>
-								<th style="word-wrap: break-word; font-size: small;">E-Invoice No.</th>
-								<th style="word-wrap: break-word; font-size: small;">E-Invoice Issue Date</th>
-								<th style="word-wrap: break-word; font-size: small;">E-Invoice Adjust Date</th>
-								<th style="word-wrap: break-word; font-size: small;">E-Invoice Status</th>
-							</tr>
-						</thead>
-						<tbody>
-							{% for doc in documentinfo %}
-							<tr>
-								<td class="table-plus" style="font-size: small;">
-									<a href="{% url 'opera:detail' doc.id %}">{{ doc.id }}</a>
-								</td>
-								<td style="font-size: small;">{{ doc.FolioNo }}</td>
-								<td style="font-size: small;">{{ doc.ReservationInfo.ConfirmationNo }}</td>
-								<td style="font-size: small;">{{ doc.ReservationInfo.RoomNumber }}</td>
-								<td style="font-size: small;">{{ doc.FiscalFolioUserInfo.AppUser }}</td>
-								<td style="font-size: small;">{{ doc.FolioInfo.TotalInfo.NetAmount|floatformat:'0'|intcomma }} </td>
-								<td style="font-size: small;">{{ doc.FolioInfo.TotalInfo.GrossAmount|floatformat:'0'|intcomma }}</td>
-								<td style="font-size: small;">{{ doc.FolioInfo.RevenueBucketInfo.1.BucketCodeTotalGross|floatformat:'0'|intcomma }}</td>
-								<td style="font-size: small;">{{ doc.FolioInfo.RevenueBucketInfo.2.BucketCodeTotalGross|floatformat:'0'|intcomma }}</td>
-								<td style="font-size: small;">{{ doc.FolioInfo.RevenueBucketInfo.3.BucketCodeTotalGross|floatformat:'0'|intcomma }}</td>
-								<td style="font-size: small; word-wrap: break-word;">{{ doc.FolioInfo.RevenueBucketInfo.0.BucketValue }}</td>
-								<td style="font-size: small; word-wrap: break-word;">{{ doc.FolioInfo.FolioHeaderInfo.BillGenerationDate }}</td>
-								<td style="font-size: small; word-wrap: break-word;">{{ doc.EinvoiceNumber }}</td>
-								<td style="font-size: small; word-wrap: break-word;">{{ doc.EinvoiceIssueDateTime }}</td>
-								<td style="font-size: small; word-wrap: break-word;">{{ doc.EinvoiceAdjustDateTime }}</td>
-								<td style="font-size: small; word-wrap: break-word;">{{ doc.EinvoiceStatus }}</td>
-							</tr>
-							{% endfor %}
-						</tbody>
-						<tfoot>
-							<td class="table-plus" style="font-size: small;">Total</td>
-							<td class="table-plus" style="font-size: small;">{{ documentinfo|length }}</td>
-							<td class="table-plus" style="font-size: small;"></td>
-							<td class="table-plus" style="font-size: small;"></td>
-							<td class="table-plus" style="font-size: small;"></td>
-							<td class="table-plus" style="font-size: small;"></td>
-							<td class="table-plus" style="font-size: small;"></td>
-							<td class="table-plus" style="font-size: small;"></td>
-							<td class="table-plus" style="font-size: small;"></td>
-							<td class="table-plus" style="font-size: small;"></td>
-							<td class="table-plus" style="font-size: small;"></td>
-							<td class="table-plus" style="font-size: small;"></td>
-							<td class="table-plus" style="font-size: small;"></td>
-							<td class="table-plus" style="font-size: small;"></td>
-							<td class="table-plus" style="font-size: small;"></td>
-							<td style="font-size: small;"></td>
-						</tfoot>
-					
-					<div class="collapse collapse-box" id="striped-table">
-						<div class="code-box">
-							<div class="clearfix">
-								<a href="javascript:;" class="btn btn-primary btn-sm code-copy pull-left"  data-clipboard-target="#striped-table-code"><i class="fa fa-clipboard"></i> Copy Code</a>
-								<a href="#striped-table" class="btn btn-primary btn-sm pull-right" rel="content-y"  data-toggle="collapse" role="button"><i class="fa fa-eye-slash"></i> Hide Code</a>
-							</div>
-							<pre><code class="xml copy-pre" id="striped-table-code">
-<table class="table table-striped">
-</table>
-							</code></pre>
-						</div>
+			<div class="pd-20 card-box mb-30">
+				<div class="clearfix mb-20">
+					<div class="pull-left">
+						<h4 class="text-blue h4">Folio Info</h4>
 					</div>
 				</div>
-				<!-- Striped table End -->
+				<table class="table table-hover data-table-export" style="width: 100%;">
+					<thead>
+						<tr>
+							<th class="table-plus datatable-nosort" style="font-size: small;">ID</th>
+							<th style="font-size: small;">Folio No.</th>
+							<th style="font-size: small;">Conf. No.</th>
+							<th style="font-size: small;">Room No.</th>
+							<th style="font-size: small;">User</th>
+							<th style="word-wrap: break-word; font-size: small;">Net Amount</th>
+							<th style="word-wrap: break-word; font-size: small;">Gross Amount</th>
+							<th style="word-wrap: break-word; font-size: small;">VAT</th>
+							<th style="word-wrap: break-word; font-size: small;">SVC</th>
+							<th style="word-wrap: break-word; font-size: small;">SCT</th>
+							<th style="word-wrap: break-word; font-size: small;">Payment Method</th>
+							<th style="word-wrap: break-word; font-size: small;">Folio Generate Date</th>
+							<th style="word-wrap: break-word; font-size: small;">E-Invoice No.</th>
+							<th style="word-wrap: break-word; font-size: small;">E-Invoice Issue Date</th>
+							<th style="word-wrap: break-word; font-size: small;">E-Invoice Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for doc in documentinfo %}
+						<tr>
+							<td class="table-plus" style="font-size: small;">
+								<a href="{% url 'opera:folio_detail' doc.id %}">{{ doc.id }}</a>
+							</td>
+							<td style="font-size: small;">{{ doc.FolioNo }}</td>
+							<td style="font-size: small;">{{ doc.ConfirmationNo }}</td>
+							<td style="font-size: small;">{{ doc.RoomNumber }}</td>
+							<td style="font-size: small;">{{ doc.AppUser }}</td>
+							<td style="font-size: small;">{{ doc.NetAmount|floatformat:'0'|intcomma }} </td>
+							<td style="font-size: small;">{{ doc.GrossAmount|floatformat:'0'|intcomma }}</td>
+							<td style="font-size: small;">{{ doc.Taxes.1.BucketCodeTotalGross|floatformat:'0'|intcomma }}</td>
+							<td style="font-size: small;">{{ doc.Taxes.2.BucketCodeTotalGross|floatformat:'0'|intcomma }}</td>
+							<td style="font-size: small;">{{ doc.Taxes.3.BucketCodeTotalGross|floatformat:'0'|intcomma }}</td>
+							<td style="font-size: small; word-wrap: break-word;">{{ doc.PaymentMethod }}</td>
+							<td style="font-size: small; word-wrap: break-word;">{{ doc.FolioCreatedDate }}</td>
+							<td style="font-size: small; word-wrap: break-word;">{{ doc.EinvoiceInfo.EinvoiceNumber }}</td>
+							<td style="font-size: small; word-wrap: break-word;">{{ doc.EinvoiceInfo.EinvoiceIssueDateTime }}</td>
+							<td style="font-size: small; word-wrap: break-word;">{{ doc.EinvoiceInfo.EinvoiceStatus }}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				
+				<div class="collapse collapse-box" id="striped-table">
+					<div class="code-box">
+						<div class="clearfix">
+							<a href="javascript:;" class="btn btn-primary btn-sm code-copy pull-left"  data-clipboard-target="#striped-table-code"><i class="fa fa-clipboard"></i> Copy Code</a>
+							<a href="#striped-table" class="btn btn-primary btn-sm pull-right" rel="content-y"  data-toggle="collapse" role="button"><i class="fa fa-eye-slash"></i> Hide Code</a>
+						</div>
+						<pre><code class="xml copy-pre" id="striped-table-code">
+							<table class="table table-striped">
+							</table>
+						</code></pre>
+					</div>
+				</div>
+			</div>
+			<!-- Striped table End -->
 		</div>
 	</div>
 </div>
